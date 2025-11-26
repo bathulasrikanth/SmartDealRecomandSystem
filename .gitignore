@@ -1,0 +1,22 @@
+# Virtual environments
+venv/
+ENV/
+env/
+smp/
+MLPredictionProject/smp/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML model artifacts
+*.pkl
+*.joblib
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
