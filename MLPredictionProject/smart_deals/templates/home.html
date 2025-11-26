@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="card p-3">
+     <h2>Smart Deal Recommendation System</h2>
+
+<form method="POST" action="{% url 'deals:predict_coupon' %}">
+        {% csrf_token %}
+
+        <label>Trip Purpose</label>
+        <input name="trip_purpose" class="form-control mb-2">
+
+        <label>Travel Company</label>
+        <input name="travel_company" class="form-control mb-2">
+
+        <label>Current Weather</label>
+        <input name="current_weather" class="form-control mb-2">
+
+        <label>Ambient Temp</label>
+        <input name="ambient_temp" type="number" class="form-control mb-2">
+
+        <!-- add any hidden defaults for missing features if desired -->
+        <input type="hidden" name="previous_redemption" value="0">
+
+        <button type="submit" class="btn btn-primary">Predict Coupon Eligibility</button>
+    </form>
+
+  </div>
+{% endblock %}
